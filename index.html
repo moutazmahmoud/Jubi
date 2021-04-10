@@ -31,8 +31,8 @@
 </head>
 
 <body>
-  <div class="container ">
-    <header>
+  <header>
+    <div class="container-header">
       <div class="logo-menu">
         <img src="./images/logo.png" alt="Jubi">
         <i class="fas fa-bars"></i>
@@ -43,19 +43,59 @@
           <a href="">REGISTER</a>      
         </div>
         <ul>
-          <li><a href="">HOME</a></li>
+          <li><a href="#hero">HOME</a></li>
           <li><a href="">MOST POPULAR</a></li>
           <li><a href="">CATEGORIES</a></li>
           <li><a href="">CONTACT</a></li>
         </ul>
       </div>
-    </header>
+    </div>
+  </header>
+
+  <div class="container ">  
     <section id="hero">
       <img src="./images/hero2.jpeg" alt="">
       <img src="./images/hero1.jpg" alt="">
       <img src="./images/hero3.jpg" alt="">
     </section> 
-    <section id="main-content">main-content</section> 
+    <section id="main-content">
+        <h3>Most popular</h3>
+        <div class="content">
+            <div class="movies-grid">
+
+              <a href="" class="movie" >
+                <img src="./images/avengers_mostpopular.jpg" alt="AVENGERS">
+                <h4>AVENGERS</h4>
+                <p>A 2012 American superhero film based on the Marvel Comics superhero team of the same name.</p>
+              </a>
+      
+              <a href="" class="movie">
+                <img src="./images/cityofember_adventure_categories.jpg" alt="Among Us">
+                <h4>Adventure</h4>
+                <p>Adventure films are a genre of film whose plots feature elements of travel. They typically involve protagonists who must leave their home or place of comfort and go to far away lands to fulfill a goal.</p>
+              </a>
+      
+              <a href="" class="movie">
+                <img src="./images/howtoloseaguy_ramance_categories.jpg" alt="How To Lose A Guy ">
+                <h4>Romance</h4>
+                <p>Romance films or romance movies are romantic love stories recorded in visual media for broadcast in theaters and on TV.</p>
+              </a>
+      
+              <a href="" class="movie" >
+                <img src="./images/avengers_mostpopular.jpg" alt="AVENGERS">
+                <h4>AVENGERS</h4>
+                <p>A 2012 American superhero film based on the Marvel Comics superhero team of the same name.</p>
+              </a>
+      
+              <a href="" class="movie">
+                <img src="./images/cityofember_adventure_categories.jpg" alt="Among Us">
+                <h4>Adventure</h4>
+                <p>Adventure films are a genre of film whose plots feature elements of travel. They typically involve protagonists who must leave their home or place of comfort and go to far away lands to fulfill a goal.</p>
+              </a>
+      
+            </div>
+        </div>
+    </section> 
     <section id="side-bar">
       <div class="side">
         <h3>Top Content</h2>
@@ -141,7 +181,11 @@
     </div>
     </section>
   </div>
-  <footer>Footer</footer> 
+  <footer>
+    <p class="copyRights">
+      Copyright © 2021 Jubi Stream jubi@jubi.com
+    </p>
+  </footer> 
 
   
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
