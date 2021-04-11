@@ -23,6 +23,7 @@ $main-color :#e74c3c;
 }
 html{
 scroll-behavior: smooth;
+scroll-padding-top: 11vh;
 }
 body{
     background:#fff;
@@ -55,15 +56,53 @@ header{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 70%;
+        width: 80%;
         padding: 1rem 0;
-        max-height: 10vh;
+        height: 7vh;
         .logo-menu{
             display: flex;
             justify-content: space-between;
+            align-items: center;
     
-            i{
+            .burger{
+                border: none;
+                background-color: transparent;
+                border-radius: 0%;
+                position: relative;
+                outline: none;
                 display: none;
+                flex-direction: column;
+                cursor: pointer;
+                z-index: 2;
+            }
+            .burger div{
+                height: 3px;
+                width: 28px;
+                z-index: 9;
+                margin: 4px;
+                z-index: 1;
+                transition: all .3s ease;
+            }
+            .toggle{
+            animation: spin .5s ease ;
+            }
+            
+            @keyframes spin {
+                from{
+                    transform:rotate(250deg)
+                }
+                to{
+                    transform:rotate(0)
+                }
+            }
+            .toggle .line1{
+                transform:  rotate(-45deg) translate(-5px, 10px);
+            }
+            .toggle .line2{
+                opacity: 0;
+            }
+            .toggle .line3{
+                transform:  rotate(45deg) translate(-5px, -10px);
             }
         }
 
@@ -117,6 +156,7 @@ header{
                 }
             }
         }
+        
     }
     
 }
@@ -126,17 +166,20 @@ header{
     grid-template-rows: auto auto auto auto auto auto;
     grid-row-gap: 1.25rem;
     grid-column-gap: 1rem;
-    width: 70%;
+    width: 80%;
+    max-width: 80%;
     position: relative;
-    margin-top: 15vh;
+    padding-top: 15vh;
 
     #hero{
         overflow: hidden;
         grid-column: 1/2;
         grid-row: 1/2;
         img{
+            width: 100%;
             &:hover{
-                transform: scalez(1.5)
+                transform: scale(1.5,1.5);
+                transition: all .5s ease;
             }
         }
     }
@@ -169,7 +212,6 @@ header{
             grid-template-columns: repeat(4,1fr);
             gap: .5rem .7rem; 
             padding-top: 1rem;
-            width: 100%;
     
             a{
                 overflow: hidden;
@@ -418,5 +460,146 @@ footer{
     width: 100%;
     text-align: center;
     background: #f2f2f2;
-    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .container-footer{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        .content{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 2rem 0;
+            form{
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                div{
+                    position: relative;
+                    &:hover form span{
+                        display: inline-block;
+                    }
+                }
+                .name{
+                    width: 70%;
+                }
+                .email{
+                    width: 70%;
+                }
+                input{
+                    padding: .7rem 1rem;
+                    width: 100%;
+                    margin: 1rem 0;
+                    outline: none;
+                    font-size: .875rem;
+                    font-weight: 500;
+                    color: #000;
+                    letter-spacing: .05rem;
+                    border: 2px solid transparent;
+                    &::placeholder{
+                        font-size: .875rem;
+                        font-weight: 500;
+                        color: #808080;
+                        letter-spacing: .1rem;
+                    }
+                    &:focus{
+                        border: 2px solid $main-color;
+                    }
+                }
+                input:nth-of-type(1){
+                    margin-top: 0;
+                }
+                .message{
+                    min-height: 100px;
+                    max-height: 200px;
+                    min-width: 70%;
+                    max-width: 70%;
+                }
+                textarea{
+                    width: 100%;
+                    margin: 0 0 1rem;
+                    outline: none;
+                    border: 2px solid transparent;
+                    color: #000;
+                    padding: .5rem 1rem;
+                    min-height: 100px;
+                    max-height: 200px;
+                    min-width: 100%;
+                    max-width: 100%;
+                    &::placeholder{
+                        font-size: .875rem;
+                        font-weight: 500;
+                        color: #808080;
+                        letter-spacing: .1rem;
+                    }
+                    &:focus{
+                        border: 2px solid $main-color;
+                    }
+                }
+                span{
+                    position: absolute;
+                    top: .8rem;
+                    right: .5rem;
+                    font-size: .7rem;
+                    color: $main-color;
+                    display: none;
+                }   
+               
+            }
+            button, #top{
+                padding: .5rem 1rem;
+                background: $main-color;
+                color: #fff;
+                outline: none;
+                border: none;
+                margin-top: 1rem;
+                cursor: pointer;
+            }
+            #top{
+                padding: .4rem .7rem;
+                font-size: 1.5rem;
+            }
+           
+        }
+        p{
+            margin: 1rem auto;
+            font-size: .85rem;
+        }
+        
+    }
+
+}
+@media screen and (min-width:200px) and (max-width:650px){
+    header{
+        height: fit-content;
+        .container-header{
+            flex-direction: column;
+
+            .logo-menu{
+                justify-content: space-between;
+                width: 100%;
+                .burger{
+                    display: flex;
+                    div{
+                        background: $main-color;
+                    }
+                }
+            }
+            
+            .nav{
+                display: none;
+            }
+            .show{
+                height: 40vh;
+                display: flex;
+            }
+        
+        }
+        
+    }
+        
 }
