@@ -5,9 +5,13 @@
 
 <head>
   <!-- =====  BASIC PAGE NEEDS  ===== -->
+
   <meta charset="utf-8">
+
   <title>Media Streaming Service - Responsive Web Design</title>
+
   <!-- =====  SEO MATE  ===== -->
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="description" content="">
   <meta name="keywords" content="">
@@ -17,17 +21,14 @@
   <meta name="rating" content="8 YEARS">
   <meta name="Language" content="en-us">
   <meta name="GOOGLEBOT" content="NOARCHIVE">
-  <!-- =====  MOBILE SPECIFICATION  ===== -->
+  <!-- =====  MOBILE  ===== -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="viewport" content="width=device-width">
   <!-- =====  CSS  ===== -->
-  <link rel="stylesheet" type="text/css" href="./slick/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"/>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@3.0.0/reset.min.css" />
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -35,7 +36,11 @@
     <div class="container-header">
       <div class="logo-menu">
         <img src="./images/logo.png" alt="Jubi">
-        <i class="fas fa-bars"></i>
+        <button class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+      </button>
       </div>
       <div class="nav">
         <div class="signing">
@@ -44,9 +49,9 @@
         </div>
         <ul>
           <li><a href="#hero">HOME</a></li>
-          <li><a href="">MOST POPULAR</a></li>
-          <li><a href="">CATEGORIES</a></li>
-          <li><a href="">CONTACT</a></li>
+          <li><a href="#side-bar">TOP CONTENT</a></li>
+          <li><a href="#extra-content">CATEGORIES</a></li>
+          <li><a href="#footer">CONTACT</a></li>
         </ul>
       </div>
     </div>
@@ -55,8 +60,6 @@
   <div class="container ">  
     <section id="hero">
       <img src="./images/hero2.jpeg" alt="">
-      <img src="./images/hero1.jpg" alt="">
-      <img src="./images/hero3.jpg" alt="">
     </section> 
     <section id="main-content">
         <h3>Most popular</h3>
@@ -181,16 +184,35 @@
     </div>
     </section>
   </div>
-  <footer>
-    <p class="copyRights">
-      Copyright © 2021 Jubi Stream jubi@jubi.com
-    </p>
+  <footer id="footer">
+    <div class="container-footer">
+      <div class="content">
+        <form action="">
+          <div class="name">
+            <input name="name" required type="text" placeholder="Your Name">
+            <span>Required</span>
+          </div>
+          <div class="email">
+            <input name="email" required type="email" placeholder="Your E-Mail" >
+            <span>Required</span>
+          </div> 
+          <div class="message">
+            <textarea name="textarea" placeholder="Your Message"  resize='none' ></textarea>
+            <span>Required</span>
+          </div>
+          <button>Submit</button>
+        </form>
+        <a href="#hero" id="top"><i class="fas fa-angle-double-up"></i></a>
+  
+      </div>
+      <p class="copyRights">
+        Copyright © 2021 Jubi Stream jubi@jubi.com
+      </p>
+    </div>
   </footer> 
 
-  
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="./slick/slick.js"></script>
   <script src="js/main.js"></script>
 </body>
 
 </html>
+
