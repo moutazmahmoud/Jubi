@@ -18,7 +18,7 @@ $main-color :#e74c3c;
     }
   }
 
-::root{
+:root{
     font-size: 16px;
 }
 html{
@@ -58,7 +58,6 @@ header{
         align-items: center;
         width: 80%;
         padding: 1rem 0;
-        height: 7vh;
         .logo-menu{
             display: flex;
             justify-content: space-between;
@@ -116,6 +115,7 @@ header{
                 display: flex;
                 align-items: flex-end;
                 justify-content: space-around;
+                margin-bottom: .5rem;
                 a{
                     padding: .5em 1em;
                     font-size: 12px;
@@ -139,20 +139,21 @@ header{
                     }
     
                     a{
-                        margin: .7em 1em;
+                        padding: .7em 1em;
                         font-size: 14px;
                         font-weight: 500;
                         letter-spacing: .5px;
+                        color: inherit;
                         display: block;
-                        
-                        // &:hover{
-                        //     background: #e74c3c;
-                        //     color: #fff;
-                           
-                        // }
                         
                 
                     }
+                    .white{
+                        color: #fff;
+                    }
+                }
+                .red-back{
+                    background: $main-color;
                 }
             }
         }
@@ -162,14 +163,14 @@ header{
 }
 .container{
     display: grid;
-    grid-template-columns: 40% 30% 30%;
+    grid-template-columns: 4fr 3fr 3fr;
     grid-template-rows: auto auto auto auto auto auto;
-    grid-row-gap: 1.25rem;
-    grid-column-gap: 1rem;
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 1.5rem;
     width: 80%;
     max-width: 80%;
     position: relative;
-    padding-top: 15vh;
+    margin-top: 6.5rem;
 
     #hero{
         overflow: hidden;
@@ -177,9 +178,13 @@ header{
         grid-row: 1/2;
         img{
             width: 100%;
+            height: 100%;
+            max-width: 100%;
+            transition: all .5s ease;
+            object-fit: cover;
             &:hover{
                 transform: scale(1.5,1.5);
-                transition: all .5s ease;
+                
             }
         }
     }
@@ -209,9 +214,9 @@ header{
             border-top: 3px solid #e9e9e9;
             text-align: center;
             display: grid;
-            grid-template-columns: repeat(4,1fr);
-            gap: .5rem .7rem; 
-            padding-top: 1rem;
+            grid-template-columns: repeat(3,1fr);
+            gap: 1rem .5rem; 
+            padding-top: 1.5rem;
     
             a{
                 overflow: hidden;
@@ -228,7 +233,7 @@ header{
                 p{
                     color: #808080;
                     text-align: left;
-                    line-height: 1rem;
+                    line-height: 1.25rem;
                     font-size: .875rem;
                 }
             }
@@ -294,17 +299,21 @@ header{
                 }
                 img{
                     width: 100%;
-                    margin-top: 2em;
+                    margin-top: 1.5rem;
                 }
             }
         }
         .side:first-of-type{
             background: #f2f2f2;
+            margin-bottom: 1.5rem;
         }
         .side:last-of-type{
             ul{
                 padding: 0
             };
+            h3{
+                padding-top: 0;
+            }
         }
     }
     #extra-content{
@@ -398,12 +407,12 @@ header{
             }
         }
     }
+
     #posts{
 
         grid-column: 3/4;
         grid-row: 4/5;
         text-align: center;
-        min-height: 500px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;        
@@ -413,7 +422,7 @@ header{
             font-weight: 600;
             text-align: left;
             width: fit-content;
-            padding: 1rem 0 1rem 1rem;
+            padding: 0 0 1rem 1rem;
             position: relative;
             &::after{
                 content: '';
@@ -468,31 +477,26 @@ footer{
         display: flex;
         flex-direction: column;
         .content{
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             padding: 2rem 0;
-            form{
-                width: 50%;
+            form,fieldset{
+                width: 100%;
+                max-width: 600px;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: center;
-                div{
-                    position: relative;
-                    &:hover form span{
-                        display: inline-block;
-                    }
-                }
-                .name{
-                    width: 70%;
-                }
-                .email{
-                    width: 70%;
+                legend{
+                    padding: 0 1rem 1rem;
+                    font-weight: 500;
                 }
                 input{
                     padding: .7rem 1rem;
-                    width: 100%;
+                    width: 94%;
+                    max-width: 100%;
                     margin: 1rem 0;
                     outline: none;
                     font-size: .875rem;
@@ -513,23 +517,17 @@ footer{
                 input:nth-of-type(1){
                     margin-top: 0;
                 }
-                .message{
-                    min-height: 100px;
-                    max-height: 200px;
-                    min-width: 70%;
-                    max-width: 70%;
-                }
                 textarea{
-                    width: 100%;
-                    margin: 0 0 1rem;
+                    width: 94%;
+                    margin: 1rem 0 1rem;
                     outline: none;
                     border: 2px solid transparent;
                     color: #000;
                     padding: .5rem 1rem;
-                    min-height: 100px;
-                    max-height: 200px;
-                    min-width: 100%;
-                    max-width: 100%;
+                    min-width: 90%;
+                    max-width: 94%;
+                    min-height: 200px;
+                    resize: none;
                     &::placeholder{
                         font-size: .875rem;
                         font-weight: 500;
@@ -562,6 +560,7 @@ footer{
             #top{
                 padding: .4rem .7rem;
                 font-size: 1.5rem;
+                margin: 0;
             }
            
         }
@@ -573,17 +572,36 @@ footer{
     }
 
 }
+@media screen and (max-width:400px){
+    :root{
+        font-size: 10px;
+    }
+}
 @media screen and (min-width:200px) and (max-width:650px){
+    :root{
+        font-size: 12px;
+    }
+    body{
+        align-items: flex-start;
+    }
     header{
         height: fit-content;
         .container-header{
             flex-direction: column;
+            position: relative;
+            width: 100%;
+            padding: 0;
+            height: fit-content;
 
             .logo-menu{
                 justify-content: space-between;
                 width: 100%;
+                img{
+                    padding: 1rem;
+                }
                 .burger{
                     display: flex;
+                    padding: 1rem;
                     div{
                         background: $main-color;
                     }
@@ -591,15 +609,120 @@ footer{
             }
             
             .nav{
-                display: none;
+                position: absolute;                
+                left: -100%;
+                width: 100%;
+                top: 100%;
+                height: 90vh;
+                background:linear-gradient(to top ,#e63925,#fff,);
+                z-index: 20;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                transition: .5s;
+                .signing{
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    width: 100%;
+                    margin-top: 1rem;
+                }
+                ul{
+                    flex-direction: column;
+                    margin-top: 1rem;
+                    align-items: center;
+                    li{
+                        margin-top: 5rem;
+                        a{
+                            font-size: 1.25rem;
+                            color: #000;
+                        }
+                    }
+                }
             }
             .show{
-                height: 40vh;
                 display: flex;
+                left: 0;
             }
         
         }
         
     }
+    .container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: fit-content;
+        padding: 1rem;
+        margin-top: 10vh;
+        #main-content{
+            .movies-grid{
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+        #images{
+            grid-template-columns: repeat(auto-fill, minmax(47%, 1fr));
+            gap: 1rem 1rem;
+            .image{
+                width: 100%;
+            }
+        }
+        #posts{
+            margin-top: 1rem;
+        }
+       
+    }
+    footer .container-footer{
+        width: 100%;
+        max-width: 100%;
+        padding: 0 1rem;
+        .content{
+            flex-direction: column;
+        }
+        #top{
+            margin-top: 2rem !important;
+        }   
+    }    
+}
+
+
+
+
+@media screen and (min-width:651px) and (max-width:1420px){
+    .movies-grid{
+      
+        grid-template-columns: repeat(3,1fr) !important ;
         
+    }
+}
+
+@media screen and (min-width:651px) and (max-width:1700px){
+    :root{
+        font-size: 14px;
+    }
+
+    header .container-header{
+        width: 100%;
+        max-width :98%
+    }
+    .container{
+      width: 100%;
+      max-width :98%
+    }
+    footer .container-footer{
+        width: 100%;
+        max-width :98%
+    }
+
+}
+@media screen and (min-width:651px) and (max-width:750px){
+
+    header .container-header .nav ul a{
+        padding: .7em .7em !important;
+    }
+    .content{
+        flex-direction: column;
+    }
+    #top{
+        margin-top: 2rem !important ;
+    }
 }
